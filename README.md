@@ -1,6 +1,6 @@
 # voxcpm-voices
 
-A small Gradio app to pick, tune and save voices for [VoxCPM2](https://huggingface.co/openbmb/VoxCPM2)
+A small [Gradio](https://www.gradio.app/) app to pick, tune and save voices for [VoxCPM2](https://huggingface.co/openbmb/VoxCPM2)
 (text to speech with voice cloning), with a tiny API so other programs can speak with the voices you
 saved.
 
@@ -27,14 +27,23 @@ It runs on the CPU (slowly: about twice as long as the audio it makes) or on a G
 
 ## Install
 
-Python 3.10 or newer, and `ffmpeg` for the mp3 previews.
+You need Python 3.10 or newer and `ffmpeg` (for adding voices and the mp3 previews). Everything else
+goes into a virtual environment of its own:
+
+- **PyTorch**, the build for your machine (CPU, NVIDIA or AMD): [pytorch.org](https://pytorch.org/get-started/locally/)
+- **VoxCPM** (`voxcpm`), the speech model's package
+- **Gradio**, which makes the web page and the API
+- a few small helpers (soundfile, numpy, Pillow; librosa, pyarrow and pandas only for the free-voice scripts)
+
+All but PyTorch come from `requirements.txt`, with VoxCPM and Gradio pinned to the versions this was
+tested with (Gradio changes a lot between major versions).
 
 ```
 git clone https://github.com/overcatbe/voxcpm-voices
 cd voxcpm-voices
 python3 -m venv env
 env/bin/pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu   # or your GPU's build
-env/bin/pip install -r requirements.txt
+env/bin/pip install -r requirements.txt                       # VoxCPM, Gradio and the helpers
 env/bin/python cpu_patch.py        # only for the CPU, see below
 env/bin/python download_model.py   # about 4 GB, says a test sentence
 ```
