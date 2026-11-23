@@ -12,14 +12,15 @@ tiny (one Python file), and it just works. So here it is, maybe it's useful to y
 **Why not just plain VoxCPM?** VoxCPM2 clones a voice from a clip, but every call starts from
 scratch. This app keeps what works: voices saved with their settings and mood per language, long
 texts that stay in one voice and tone from start to finish, clean free voices to start with, and a
-small API so other programs can just say "speak this with Anna". Details below, under
+small API so other programs can just say "speak this with Anna". And you can make new voices from a
+recording in a minute. Details below, under
 [What makes it sound better](#what-makes-it-sound-better).
 
 - Pick a language and a reference voice, tune `cfg_value`, steps, denoising and a mood ("calm,
   slightly slower"), listen to a preview, save it as a profile.
 - Give voices a name, a gender and an avatar; mark bad ones so they disappear from the lists.
-- Add your own voice from a recording (6 to 30 s of clean speech), with a required note on where it
-  comes from and who agreed to it.
+- **Create new voices**: record one right in the browser with your microphone, or upload a clip,
+  and it becomes a voice like any other (see [Create your own voices](#create-your-own-voices)).
 - Two API calls for other programs: `voices` lists the saved profiles, `speak` says a text with one.
 
 It runs on the CPU (slowly: about twice as long as the audio it makes) or on a GPU.
@@ -70,6 +71,23 @@ The app has no voices of its own. Free ones, all **CC BY 4.0** (credit needed wh
 
 The scripts put their picks into `free_voices/candidates/` in the data folder, with the attribution
 file next to them. They are candidates: listen before you use one.
+
+## Create your own voices
+
+Open **Add a new voice from your own recording** at the top of the page:
+
+1. **Record** with the microphone button, right in the browser, or **upload** a clip (any format
+   ffmpeg reads; it is turned into mono WAV). 6 to 30 s of clean speech of one person works best;
+   3 to 60 s are accepted. Read something calm and natural, in a quiet room.
+2. Give it a **name** and the **language** it is spoken in, and optionally what is said in it.
+3. Write down **where it comes from**: own voice, someone's written consent, or a license. This is
+   required and saved next to the clip, so every voice can be traced later.
+4. **Add voice**: it is selected below at once. Generate a preview, tune the settings and the mood,
+   give it an avatar, and save the profile.
+
+From then on it is a voice like the free ones: it speaks every language VoxCPM2 knows, not only the
+one you recorded, and other programs can use it through the API. Your recordings stay on your
+machine, in `profiles/custom_voices/` in the data folder.
 
 **Your own voice, or anyone else's:** only clone voices you have the right to. Your own, or a
 person's who agreed in writing, or a clip under a license that allows it. The app asks for that
