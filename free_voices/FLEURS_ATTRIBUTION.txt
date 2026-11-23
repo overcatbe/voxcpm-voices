@@ -1,0 +1,20 @@
+Source: FLEURS (Google), https://huggingface.co/datasets/google/fleurs
+License: CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/
+Attribution is required wherever these clips or voices generated from them are used.
+
+Cite as (from the dataset card):
+  Conneau, A., Ma, M., Khanuja, S., Zhang, Y., Axelrod, V., Dalmia, S., Riesa, J.,
+  Rivera, C., Bapna, A. (2022). "FLEURS: Few-shot Learning Evaluation of Universal
+  Representations of Speech." arXiv:2205.12446. https://arxiv.org/abs/2205.12446
+
+What is in this folder:
+  fleurs_<lang>_<split>_<gender>_<n>.wav      one read sentence of a FLEURS speaker
+                                              (16 kHz, 8-16 s), used as a cloning reference
+  fleurs_<lang>_<split>_<gender>_<n>.reference.txt   the sentence that speaker reads
+
+FLEURS has no speaker IDs, only a gender label. Speakers are anonymous crowd workers reading
+sentences. Two clips of the same language and gender were picked to differ in median pitch, but
+that is only a heuristic, so two files can still be the same person.
+
+Status: candidates, not approved. Listen before using any of them in a product, and check that
+the model's own license allows the intended commercial use.

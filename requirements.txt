@@ -1,0 +1,12 @@
+# Install PyTorch first, the build for your machine (CPU, CUDA or ROCm): https://pytorch.org/get-started/locally/
+# e.g. CPU only:  pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+voxcpm==2.0.2
+gradio==6.14.0
+soundfile
+numpy
+pillow
+huggingface_hub
+# only for the scripts in free_voices/:
+librosa
+pyarrow
+pandas

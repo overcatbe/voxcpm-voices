@@ -1,0 +1,21 @@
+Source: CML-TTS (Multilingual TTS dataset), https://huggingface.co/datasets/ylacombe/cml-tts
+License (as stated on the dataset card): "Public Domain, Creative Commons Attribution 4.0 International
+Public License (CC-BY-4.0)" - https://creativecommons.org/licenses/by/4.0/legalcode
+Attribution is required wherever these clips or voices generated from them are used.
+The recordings are audiobooks read by volunteers of the LibriVox project (public domain texts).
+
+Cite as (from the dataset card):
+  Oliveira, F. S., Casanova, E., Candido Junior, A., Soares, A. S., Galvao Filho, A. R. (2023).
+  "CML-TTS: A Multilingual Dataset for Speech Synthesis in Low-Resource Languages."
+  arXiv:2306.10097. https://arxiv.org/abs/2306.10097
+
+What is in this folder:
+  cml_<lang>_<speaker>.wav   3 to 6 clean clips of ONE speaker joined with 0.3 s gaps (about 20-30 s,
+                             24 kHz), used as a cloning reference. <speaker> is the dataset's speaker id.
+  cml_<lang>_<speaker>.reference.txt   the transcripts of the clips that had one (some have none)
+
+Speakers are anonymous LibriVox volunteers. The dataset gives no gender label; "lower/higher voice" was
+guessed from median pitch only. Two files can never be the same person because each is a different speaker id.
+
+Status: candidates, not approved. Listen before using any of them in a product, and check that the
+model's own license allows the intended commercial use.
