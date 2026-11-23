@@ -7,6 +7,12 @@ saved.
 I made this some months ago for my own use, and it has been doing its job ever since: simple,
 tiny (one Python file), and it just works. So here it is, maybe it's useful to you too.
 
+**Why not just plain VoxCPM?** VoxCPM2 clones a voice from a clip, but every call starts from
+scratch. This app keeps what works: voices saved with their settings and mood per language, long
+texts that stay in one voice and tone from start to finish, clean free voices to start with, and a
+small API so other programs can just say "speak this with Anna". Details below, under
+[What makes it sound better](#what-makes-it-sound-better).
+
 - Pick a language and a reference voice, tune `cfg_value`, steps, denoising and a mood ("calm,
   slightly slower"), listen to a preview, save it as a profile.
 - Give voices a name, a gender and an avatar; mark bad ones so they disappear from the lists.
