@@ -67,6 +67,30 @@ file next to them. They are candidates: listen before you use one.
 person's who agreed in writing, or a clip under a license that allows it. The app asks for that
 note when you add a voice and keeps it next to the clip.
 
+## What makes it sound better
+
+A few things it does on top of plain VoxCPM2, learned the hard way:
+
+- **Sentence by sentence, each one continuing the last.** Long texts are split into sentences; every
+  sentence gets the previous one (its audio and text) as a prompt. The voice and the tone stay the
+  same from the first sentence to the last instead of drifting, and there is a short pause (0.25 s)
+  between sentences.
+- **The mood goes on the first sentence only.** VoxCPM2 takes a mood as a few words in brackets in
+  front of the text. It goes on the first sentence, and the chaining carries it through the rest. You pick a preset (calm, friendly, slow and clear, ...) or type your own words, the app
+  adds the brackets.
+- **Clean reference clips.** The free-voice scripts drop clips that are clipped (peak at the limit),
+  noisy (a rough signal-to-noise check) or start with noise, and keep clean speech: 8 to 16 s for
+  FLEURS, or 3 to 6 clips of one speaker joined with 0.3 s gaps to about 30 s for CML-TTS, so the
+  model hears more of the voice.
+- **Different voices, not the same one twice.** Picks of the same language and gender are chosen to
+  differ in pitch, and each CML voice is a different speaker.
+- **Any voice in any language.** VoxCPM2 clones across languages, so every voice is offered for every
+  language (the ones recorded in it come first). Profiles are saved per language, so a voice can have
+  its own settings and mood for each.
+- **Bad voices out of the way.** Mark a voice as BAD and it disappears from the lists and the API.
+- **Denoise** cleans a noisy reference before cloning; leave it off for clean clips.
+- Memory is freed after every sentence, so long texts don't fill up the GPU.
+
 ## API
 
 Besides the page, two calls (Gradio's plain HTTP API):
