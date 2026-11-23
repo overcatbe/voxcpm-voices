@@ -4,6 +4,9 @@ A small Gradio app to pick, tune and save voices for [VoxCPM2](https://huggingfa
 (text to speech with voice cloning), with a tiny API so other programs can speak with the voices you
 saved.
 
+I made this some months ago for my own use, and it has been doing its job ever since: simple,
+tiny (one Python file), and it just works. So here it is, maybe it's useful to you too.
+
 - Pick a language and a reference voice, tune `cfg_value`, steps, denoising and a mood ("calm,
   slightly slower"), listen to a preview, save it as a profile.
 - Give voices a name, a gender and an avatar; mark bad ones so they disappear from the lists.
